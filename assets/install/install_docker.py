@@ -17,6 +17,9 @@ def install_docker():
 
 
 if __name__ == '__main__':
+    sh.apt_get("update", "-y")
     install_packages(["curl", "vim"])
     install_docker()
+    # wrapdocker will not work without apparmor
+    sh.apt_get("install", "-y", "apparmor")
     print "Docker is installed"
