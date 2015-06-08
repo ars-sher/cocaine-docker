@@ -30,6 +30,7 @@ def install_cocaine():
                       # "libcocaine-plugin-docker2=%s" % COCAINE_VERSION,
                       "msgpack-python", "build-essential", "python-dev"])
     sh.pip("install", "cocaine-tools")
+    sh.mkdir("/var/run/cocaine/")  # cocaine-runtime can't do it itself
 
 
 def install_elliptics():
@@ -39,4 +40,4 @@ if __name__ == '__main__':
     add_reverbrain_repos()
     install_cocaine()
     install_elliptics()
-    # print "Cocaine is installed"
+    print "Cocaine is installed"
