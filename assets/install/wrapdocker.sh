@@ -82,6 +82,9 @@ done
 popd >/dev/null
 
 
+# trying to avoid "no more loopback devices available" error
+bash /cocaine-setup/install/ensure_loop.sh
+
 # If a pidfile is still around (for example after a container restart),
 # delete it so that docker can start.
 rm -rf /var/run/docker.pid
